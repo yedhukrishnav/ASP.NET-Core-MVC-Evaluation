@@ -1,0 +1,107 @@
+﻿@model SalaryViewModel
+
+@{
+    ViewData["Title"] = "Assign salary";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<hr />
+<a class="btn btn-success" asp-controller="Admin" asp-action="Index">View All</a>
+<br />
+<br />
+
+<div class="container">
+    <h3 class="card-title text-center mb-4">Profile Details</h3>
+
+    <div class="mb-3">
+        <label class="form-label">Full Name</label>
+        <input value="@Model.name" asp-for="name" class="form-control" readonly />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Date of Birth</label>
+        <input value="@Model.dob.ToString("yyyy-MM-dd")" asp-for="dob" class="form-control" readonly />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Gender</label>
+        <input value="@Model.gender" asp-for="gender" class="form-control" readonly />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Account Type</label>
+        <input value="@Model.account_type" asp-for="account_type" class="form-control" readonly />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input value="@Model.email" asp-for="email" class="form-control" readonly />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input value="@Model.password" type="password" asp-for="password" class="form-control" readonly />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Profile Photo</label><br />
+        <img src="@Url.Content("~/images/" + Model.photo_name)" alt="Profile Photo" class="img-thumbnail" style="max-width:150px;" />
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <a asp-controller="Registration" asp-action="Edit" asp-route-id="@Model.user_id" class="btn btn-warning">Edit</a>
+        </div>
+    </div>
+</div>
+
+<form method="post" asp-controller="Admin" asp-action="SalaryAllocation">
+    <div class="container">
+        <h3 class="card-title text-center mb-4">Salary Details</h3>
+
+     <div class="mb-3">
+            <input value="@Model.user_id" asp-for="user_id" type="hidden" />
+    </div>
+
+        <div class="mb-3">
+            <label class="form-label">Month</label>
+            <select class="form-select" name="Month" asp-for="month">
+                <option value="">-- Select Month --</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Year</label>
+            <select class="form-select" name="Year" asp-for="year">
+                <option value="">-- Select Year --</option>
+                @for (int year = 2000; year <= 2030; year++)
+                {
+                    <option value="@year">@year</option>
+                }
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Salary</label>
+            <input type="text" class="form-control" name="Salary" asp-for="salary" placeholder="Enter salary amount" />
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <button type="submit" class="btn btn-warning">Assign</button>
+            </div>
+        </div>
+    </div>
+</form>

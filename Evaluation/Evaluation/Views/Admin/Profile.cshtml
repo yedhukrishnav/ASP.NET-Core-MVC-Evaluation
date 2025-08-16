@@ -1,0 +1,89 @@
+﻿@model Registration
+
+@{
+    ViewData["Title"] = "My Profile";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="~/plugins/fontawesome-free/css/all.min.css">
+<!-- icheck bootstrap -->
+<link rel="stylesheet" href="~/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="~/dist/css/adminlte.min.css">
+<div class="register-box">
+    <div class="card">
+        <div class="card-body register-card-body">
+            <p class="login-box-msg">Update Your Profile</p>
+
+            <form method="post" enctype="multipart/form-data">
+                <div class="container">
+                    <h3 class="card-title text-center mb-4">Profile Details</h3>
+
+                    <div class="mb-3">
+                        <label class="form-label">Full Name</label>
+                        <input value="@Model.user_id" asp-for="user_id" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Full Name</label>
+                        <input value="@Model.name" asp-for="name" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Date of Birth</label>
+                        <input value="@Model.dob.ToString("yyyy-MM-dd")" asp-for="dob" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Gender</label>
+                        <input value="@Model.gender" asp-for="gender" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Account Type</label>
+                        <input value="@Model.account_type" asp-for="account_type" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input value="@Model.email" asp-for="email" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input value="@Model.password" type="password" asp-for="password" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Profile Photo</label><br />
+                        <img src="@Url.Content("~/images/" + Model.photo_name)" alt="Profile Photo" class="img-thumbnail" style="max-width:150px;" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="img_file" class="form-label">UpdateProfile Photo</label>
+                        <input asp-for="img_file" type="file" class="form-control" />
+                        <span asp-validation-for="img_file" class="text-danger"></span>
+                    </div>
+
+                    <div class="row">
+                        <!-- /.col -->
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary" asp-controller="Staff" asp-action="UpdateProfile">Update</button>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+            </form>
+        </div>
+        <!-- /.form-box -->
+    </div><!-- /.card -->
+</div>
+
+<!-- jQuery -->
+<script src="~/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="~/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="~/dist/js/adminlte.min.js"></script>

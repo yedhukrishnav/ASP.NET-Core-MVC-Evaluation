@@ -1,0 +1,109 @@
+﻿@model IEnumerable<Registration>
+
+@{
+    ViewData["Title"] = "All Users";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<style>
+    th{
+        padding:10px;
+    }
+</style>
+<!-- /.card -->
+<!-- Google Font: Source Sans Pro -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="~/plugins/fontawesome-free/css/all.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="~/dist/css/adminlte.min.css">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+
+                <div class="card-header">
+                    <h3 class="card-title">Registered Users</h3>
+                </div>
+                <br />
+
+                <div class="form-group col-md-3 ml-5">
+                    <label class="control-label">Account Type</label>
+                    <select class="form-control" id="accountTypeFilter">
+                        <option value="">All Types</option>
+                        <option value="Admin">Admin</option>
+                        <option value="Engineer">Engineer</option>
+                        <option value="Senior Engineer">Senior Engineer</option>
+                        <option value="UI Designer">UI Designer</option>
+                        <option value="Data Scientist">Data Scientist</option>
+                        <option value="Flutter Developer">Flutter Developer</option>
+                    </select>
+                </div>
+
+
+                <br />
+
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="usersTable" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th >ID</th>
+                                <th >Name</th>
+                                <th>DOB</th>
+                                <th >Gender</th>
+                                <th >Email</th>
+                                <th >Password</th>
+                                <th >Account Type</th>
+                                <th>Photo</th>
+                                <th>Assign Salary</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.user_id</td>
+                                    <td>@item.name</td>
+                                    <td>@item.dob</td>
+                                    <td>@item.gender</td>
+                                    <td>@item.email</td>
+                                    <td>@item.password</td>
+                                    <td class="accountType">@item.account_type</td>
+                                    <td>
+                                        <img src="~/images/@Html.DisplayFor(modelItem=>item.photo_name)" height="120" width="120" />
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-success" asp-controller="Admin" asp-action="AssignSalary" asp-route-user_id="@item.user_id">Edit</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="~/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="~/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="~/dist/js/demo.js"></script>
+<script>
+    document.getElementById("accountTypeFilter").addEventListener("change", function () {
+        var filterValue = this.value; // "" means show all
+        var rows = document.querySelectorAll("#usersTable tbody tr");
+
+        rows.forEach(function (row) {
+            var accountType = row.querySelector(".accountType").textContent;
+            if (filterValue === "" || accountType === filterValue) {
+                row.style.display = "";
+            } else {
+                row.style.display = "none";
+            }
+        });
+    });
+</script>

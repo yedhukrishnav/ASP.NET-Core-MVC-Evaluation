@@ -1,0 +1,82 @@
+﻿@model Registration
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h3 class="card-title text-center mb-4">Register</h3>
+    <form asp-controller="Registration" asp-action="Register" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label asp-for="name" class="form-label">Full Name</label>
+            <input asp-for="name" class="form-control" placeholder="Enter your full name" />
+            <span asp-validation-for="name" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="dob" class="form-label">Date of Birth</label>
+            <input asp-for="dob" class="form-control" type="date" />
+            <span asp-validation-for="dob" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="gender" class="form-label">Gender</label>
+            <select asp-for="gender" class="form-select">
+                <option value="">-- Select Gender --</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+            <span asp-validation-for="gender" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="account_type" class="form-label">Account Type</label>
+            <select asp-for="account_type" class="form-select">
+                <option value="">-- Select Account Type --</option>
+                <option value="Admin">Admin</option>
+                <option value="Engineer">Engineer</option>
+                <option value="Senior Engineer">Senior Engineer</option>
+                <option value="UI Designer">UI Designer</option>
+                <option value="Data Scientist">Data Scientist</option>
+                <option value="Flutter Developer">Flutter Developer</option>
+            </select>
+            <span asp-validation-for="account_type" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="email" class="form-label">Email</label>
+            <input asp-for="email" class="form-control" placeholder="Enter your email" />
+            <span asp-validation-for="email" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="password" class="form-label">Password</label>
+            <input asp-for="password" type="password" class="form-control" placeholder="Enter your password" />
+            <span asp-validation-for="password" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="img_file" class="form-label">Profile Photo</label>
+            <input asp-for="img_file" type="file" class="form-control" />
+            <span asp-validation-for="img_file" class="text-danger"></span>
+        </div>
+
+        <div class="row">
+
+            <div class="col-4">
+                <button type="submit" class="btn btn-primary" asp-controller="Registration" asp-action="Register">Register</button>
+            </div>
+            <div class="col-8">
+                @if (TempData["message"] != null)
+                {
+                    <div class="alert alert-info">@TempData["message"]</div>
+                }
+            </div>
+        </div>
+        <p class="mt-3 text-center">
+            Already have an account? <a class="btn btn-success" asp-controller="Registration" asp-action="Login">Login</a>
+        </p>
+    </form>
+</div>

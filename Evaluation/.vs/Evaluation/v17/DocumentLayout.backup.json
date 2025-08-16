@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\asp.net\\Evaluation\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{38AFCB94-293C-4287-B352-1467A946E2B1}|Evaluation\\Evaluation.csproj|e:\\asp.net\\evaluation\\evaluation\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38AFCB94-293C-4287-B352-1467A946E2B1}|Evaluation\\Evaluation.csproj|solutionrelative:evaluation\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38AFCB94-293C-4287-B352-1467A946E2B1}|Evaluation\\Evaluation.csproj|e:\\asp.net\\evaluation\\evaluation\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38AFCB94-293C-4287-B352-1467A946E2B1}|Evaluation\\Evaluation.csproj|solutionrelative:evaluation\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\asp.net\\Evaluation\\Evaluation\\Views\\Admin\\Index.cshtml",
+              "RelativeDocumentMoniker": "Evaluation\\Views\\Admin\\Index.cshtml",
+              "ToolTip": "E:\\asp.net\\Evaluation\\Evaluation\\Views\\Admin\\Index.cshtml",
+              "RelativeToolTip": "Evaluation\\Views\\Admin\\Index.cshtml",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAiwFIAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-16T08:44:37.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "E:\\asp.net\\Evaluation\\Evaluation\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Evaluation\\Controllers\\AdminController.cs",
+              "ToolTip": "E:\\asp.net\\Evaluation\\Evaluation\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Evaluation\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAQwFUAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-16T08:41:43.933Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

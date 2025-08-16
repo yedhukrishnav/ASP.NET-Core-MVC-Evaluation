@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Salary>
+
+@{
+    ViewData["Title"] = "Salary Report";
+    Layout = "~/Views/Shared/Staff_Layout.cshtml";
+}
+<h2>Salary Report</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Month</th>
+            <th>Year</th>
+            <th>Salary</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.month</td>
+                <td>@item.year</td>
+                <td>@item.salary</td>
+            </tr>
+        }
+    </tbody>
+</table>

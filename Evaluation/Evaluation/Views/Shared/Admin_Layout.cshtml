@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Evaluation</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Evaluation.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+
+        <nav class="navbar navbar-expand-lg bg-light" data-bs-theme="light">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarColor03">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active">
+                                All Staffs List
+                                <span class="visually-hidden">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Admin" asp-action="Profile">My Profile</a>
+                        </li>
+                        </li>
+                    </ul>
+                    <div class="d-flex mr-5">
+                        <form class="d-flex ms-auto">
+                            <a class="btn btn-secondary my-2 my-sm-0" type="submit" asp-controller="Admin" asp-action="Logout">Logout</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
